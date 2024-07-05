@@ -1,6 +1,6 @@
 .button {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-text-on-primary);
   border: none;
   outline: none;
   padding: 10px 20px;
@@ -10,4 +10,13 @@
   width: 100%;
   font-weight: bold;
   transition: background-color 0.3s;
+
+  border-bottom: 4px solid var(--color-primary-shade);
+  margin-bottom: 4px;
+  transition: border 0.7s ease, margin 0.7s ease;
+
+  &:hover {
+    border-bottom-width: 8px;
+    margin-bottom: 0;
+  }
 }

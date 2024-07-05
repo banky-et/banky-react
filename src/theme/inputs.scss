@@ -3,25 +3,33 @@
   flex-direction: column;
   gap: 2px;
   > .label {
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Manrope;
+    color: #777;
   }
 
   > input[type="text"],
   > input[type="email"],
   > input[type="number"],
   > input[type="password"] {
-    border: 1px solid #ccc;
     width: 100%;
-    border-radius: 4px;
-    padding: 8px;
-    margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 400;
-    font-family: Roboto, Inter, system-ui;
-    font-synthesis: none;
+    padding: 12px 8px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    font-size: 20px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    border-radius: 4px;
+    background-color: #efefef;
+    border: none;
+    border-bottom: 4px solid #ccc;
+    outline: none;
+
+    &:focus {
+      border-bottom: 4px solid var(--color-primary);
+    }
   }
 }

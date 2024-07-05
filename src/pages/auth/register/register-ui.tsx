@@ -3,7 +3,7 @@ import { useRegisterUser } from "./use-register-user";
 
 export const RegisterUserInterface: React.FC<
   ReturnType<typeof useRegisterUser>
-> = ({ fields, isPending, onSubmit }) => {
+> = ({ fields, isPending, error, onSubmit }) => {
   return (
     <div className="register-container">
       <form onSubmit={onSubmit}>
@@ -14,17 +14,11 @@ export const RegisterUserInterface: React.FC<
             {...fields.name}
             type="text"
             autoComplete="name"
-            placeholder="Full Name"
           />
         </div>
         <div className="form-field">
           <label className="label">Phone Number</label>
-          <input
-            disabled={isPending}
-            {...fields.phoneNumber}
-            type="number"
-            placeholder="Phone Number"
-          />{" "}
+          <input disabled={isPending} {...fields.phoneNumber} type="number" />
         </div>
         <div className="form-field">
           <label className="label">Pin</label>
@@ -33,9 +27,9 @@ export const RegisterUserInterface: React.FC<
             {...fields.pin}
             type="password"
             autoComplete="off"
-            placeholder="Password"
-          />{" "}
+          />
         </div>
+        {error && <div className="error">{(error as any).error}</div>}
         <button disabled={isPending} className="button" type="submit">
           Register
         </button>
