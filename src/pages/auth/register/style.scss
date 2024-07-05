@@ -1,0 +1,14 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 100dvh;
+  width: 100%;
+  padding: 2em;
+
+  > form {
+    display: flex;
+    flex-direction: column;
+  }
+}
