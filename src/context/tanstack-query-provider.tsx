@@ -1,11 +1,11 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useRef } from "react";
+import { useState } from "react";
 export const TanstackClientProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
-  const queryClient = useRef(new QueryClient());
+  const [queryClient] = useState(() => new QueryClient());
   return (
-    <QueryClientProvider client={queryClient.current}>
+    <QueryClientProvider client={queryClient}>
       {children}
     </QueryClientProvider>
   );
