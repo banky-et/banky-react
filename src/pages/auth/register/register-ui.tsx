@@ -29,7 +29,11 @@ export const RegisterUserInterface: React.FC<
             autoComplete="off"
           />
         </div>
-        {error && <div className="error">{(error as any).error}</div>}
+        {error && (
+          <div className="error">
+            {error instanceof Error ? error.message : "An error occurred"}
+          </div>
+        )}
         <button disabled={isPending} className="button" type="submit">
           Register
         </button>
